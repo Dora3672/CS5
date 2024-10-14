@@ -11,7 +11,7 @@ def numToBaseB(N, B):
     if N == 0:
         return ''
     digits = [str(x) for x in range(B)]
-    return numToBaseB(N//B,B) + digits[N % B]
+    return numToBaseB(N // B,B) + digits[N % B]
 
 assert numToBaseB(0, 4) == ''
 assert numToBaseB(42, 5) == '132'
@@ -25,7 +25,7 @@ def baseBToNum(S, B):
     """
     if S == '':
         return 0
-    return B*baseBToNum(S[:-1],B) + int(S[-1])%B
+    return B * baseBToNum(S[:-1], B) + int(S[-1]) % B
 
 assert baseBToNum('5733', 9) == 4242
 assert baseBToNum('1474462', 8) == 424242
@@ -40,7 +40,7 @@ def  baseToBase(B1, B2, s_in_B1):
     takes three arguments: a base B1, a base B2 (both of which are between 2 and 10, inclusive) and s_in_B1, which is a string representing a number in base B1
     return a string representing the same number in base B2.
     """
-    return numToBaseB(baseBToNum(s_in_B1,B1),B2)
+    return numToBaseB(baseBToNum(s_in_B1, B1), B2)
 
 assert baseToBase(2, 4, '101010') == '222'
 assert baseToBase(2, 5, '1001001010') == '4321'
@@ -52,7 +52,7 @@ def add(S, T):
     takes two binary strings S and T
     returns their sum, also in binary
     """
-    return numToBaseB(baseBToNum(S,2) + baseBToNum(T,2), 2)
+    return numToBaseB(baseBToNum(S, 2) + baseBToNum(T, 2), 2)
 
 assert add('11', '100') == '111'
 assert add("11100", "11110") == '111010'
@@ -96,7 +96,7 @@ def compress(S):
     while count < len(S) and S[count] == S[0]:
         count += 1
     num = numToBaseB(count,2)
-    return S[0] + ('0'*(7-len(num)) + num) + compress(S[count:])
+    return S[0] + ('0' * (7 - len(num)) + num) + compress(S[count:])
 
 assert compress('11111') == '10000101'
 assert compress('101010') == '100000010000000110000001000000011000000100000001'

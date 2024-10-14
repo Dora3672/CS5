@@ -54,7 +54,7 @@ def shiftN(c, N):
     """
     if N == 0:
         return c
-    return shiftN(shift1(c),N-1)
+    return shiftN(shift1(c), N - 1)
     
 def encipher(s, N):
     """
@@ -111,7 +111,7 @@ def decipher(s):
     - calculate the scrabble score for each possible deciphered text
     - the lowerest scrabble score will probably be the deciphered text as scrabble gives frequenct letters low scores and these letters usually appear in words/sentences
     """
-    scores = [[scrabbleScore(encipher(s,x)),encipher(s,x)] for x in range(0, 26)]
+    scores = [[scrabbleScore(encipher(s, x)),encipher(s, x)] for x in range(0, 26)]
     return min(scores)[1]
 
 
@@ -121,7 +121,7 @@ def blsort(L):
     accept a list L (binary list)
     return a list with the same elements as L, but in ascending order
     """
-    return L.count(0)*[0] + L.count(1)*[1]
+    return L.count(0) * [0] + L.count(1) * [1]
 
 
 
@@ -132,7 +132,7 @@ def gensort(L):
     """
     if all(L[i] == min(L) for i in range(len(L))):
         return L
-    return [min(L)] + gensort(L[:L.index(min(L))]+L[L.index(min(L))+1:])
+    return [min(L)] + gensort(L[:L.index(min(L))] + L[L.index(min(L) + 1:])
 
 
 
@@ -141,7 +141,7 @@ def jscore(S, T):
     accept two strings, S and T
     returns the "jotto score" of S compared with T.
     """
-    if S=="" or T=="":
+    if S == "" or T == "":
         return 0
     if S[0] in T:
         return 1 + jscore(S[1:], T.replace(S[0], '', 1))

@@ -54,7 +54,7 @@ def rwsteps(start, low, hi):
     time.sleep(0.05)
 
     if start <= low or start >= hi:            # base case: no steps if we're at an endpt
-        print("You like your", "mom" if start==hi else "dad", "more")
+        print("You like your", "mom" if start == hi else "dad", "more")
         return 0
     
     else:
@@ -82,23 +82,23 @@ def race(o, c, p, low, hi):
                                 race(3,18,12,0,24)   # uneven spacing: chick is much closer to 12, the peanut
         """ 
 
-        if low >= hi or p<low or p>hi or o>p or c<p:
+        if low >= hi or p < low or p > hi or o > p or c < p:
             return "Invalid inputs. Please try again!"
 
-        walkway = "_"*(hi-low)            
+        walkway = "_" * (hi - low)            
 
-        walkway = walkway[:(o-low)] + "🦉" + walkway[(o-low):(p-low)] + "🥜" + walkway[(p-low):(c-low)] + "🐥" + walkway[(c-low):]
+        walkway = walkway[:(o - low)] + "🦉" + walkway[(o - low):(p - low)] + "🥜" + walkway[(p - low):(c - low)] + "🐥" + walkway[(c - low):]
 
         walkway = "|" + walkway + "|"             # walls on the side
 
         print(walkway, "    ", o, c, p, low, hi)   
         time.sleep(0.05)
 
-        if (o==p) or (c==p):            # base case: no steps touching the peanut
-            print("Winner:", "owl" if o==p else "chick")
+        if (o == p) or (c == p):            # base case: no steps touching the peanut
+            print("Winner:", "owl" if o == p else "chick")
             return 0
-        elif (o==low or o==hi) or (c==low or c==hi):            # base case: no steps touching the wall 
-            print("Winner:", "chick" if (o==low or o==hi) else "owl")
+        elif (o == low or o == hi) or (c == low or c == hi):            # base case: no steps touching the wall 
+            print("Winner:", "chick" if (o == low or o == hi) else "owl")
             return 0
         else:               # takes one step for both animals
-            return 1 + race(o+rs(), c+rs(), p, low, hi)            
+            return 1 + race(o + rs(), c + rs(), p, low, hi)            

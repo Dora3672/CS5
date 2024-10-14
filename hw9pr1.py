@@ -167,10 +167,10 @@ def lifedemo():
     """
     W = 42; H = 21          # alter to suit!
     
-    A = createBoard(W,H)    # empty grid
-    placeGlider(2,2,A)
-    placeAirDancer(2,20,A)
-    placeAirDancer(3,36,A)
+    A = createBoard(W, H)    # empty grid
+    placeGlider(2, 2, A)
+    placeAirDancer(2, 20, A)
+    placeAirDancer(3, 36, A)
 
     # A = randomCells(W,H)   # random grid
     
@@ -208,8 +208,8 @@ def countNeighbors(row, col, A):
     return the number of live neighbors for a cell in the board A at a particular row and col.
     """
     n = 0
-    for r in range(row-1, row+2):
-        for c in range(col-1, col+2):
+    for r in range(row - 1, row + 2):
+        for c in range(col - 1, col + 2):
             if not (r == row and c == col):
                 n += 1 if A[r][c] == 1 else 0
                 

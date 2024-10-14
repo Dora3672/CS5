@@ -9,21 +9,21 @@ def dbl(x):
        Argument x: a number (int or float)
        Spam is great, and dbl("spam") is better!
     """
-    return 2*x
+    return 2 * x
 
 
 def tpl(x):
     """Return value: tpl returns thrice its argument
        Argument x: a number (int or float)
     """
-    return 3*x
+    return 3 * x
 
 
 def sq(x):
     """Result: sq returns the square of its argument
        Argument x: a number (int or float)
     """
-    return x*x
+    return x * x
 
 
 def interp(low, hi, fraction):
@@ -32,7 +32,7 @@ def interp(low, hi, fraction):
        Argument hi: a number (int or float)
        Argument fraction: a number/fraction (float)
     """
-    return low +((hi-low)*fraction)
+    return low + ((hi - low) * fraction)
 
 
 def checkends(s):
@@ -81,10 +81,10 @@ def flipside(s):
 
     length = len(s)
 
-    if length%2 == 0:
-        s = s[int(length/2):] + s[:int(length/2)]
+    if length % 2 == 0:
+        s = s[int(length / 2):] + s[:int(length / 2)]
     else:
-        s = s[int((length/2) - 0.5):] + s[:int((length/2) - 0.5)]
+        s = s[int((length / 2) - 0.5):] + s[:int((length / 2) - 0.5)]
     
     return s
 
@@ -93,13 +93,13 @@ def convertFromSeconds(s):
     """Result: a list with the corresponding days, hours, minutes and seconds represented in the argument
        Argument s: a number (int)
     """
-    days = s//86400
-    s = s%86400
+    days = s // 86400
+    s = s % 86400
 
-    hours = s//3600
-    s = s%3600
+    hours = s // 3600
+    s = s % 3600
 
-    minutes = s//60
-    seconds = s%60
+    minutes = s // 60
+    seconds = s % 60
 
     return [days, hours, minutes, seconds]

@@ -2,10 +2,10 @@
 # Dora Ding
 
 def string_times(str, n):
-  return n*str
+  return n * str
 
 def front_times(str, n):
-  return n*str if len(str)<=3 else n*str[:3]
+  return n * str if len(str) <= 3 else n * str[:3]
 
 def string_bits(str):
   return str[0::2]
@@ -13,7 +13,7 @@ def string_bits(str):
 def string_splosion(str):
   answer = ''
   for i in range(len(str)):
-    answer += str[:i+1]
+    answer += str[:i + 1]
   return answer
 
 def last2(str):
@@ -22,7 +22,7 @@ def last2(str):
   end = str[-2:]
   count = 0
   for i in range(len(str) - 2):
-      if str[i:i+2] == end:
+      if str[i:i + 2] == end:
           count += 1
   return count
 
@@ -30,9 +30,9 @@ def array_count9(nums):
   return nums.count(9)
 
 def array_front9(nums):
-  if len(nums)<4:
-    return True if nums.count(9)>0 else False
-  return True if nums[:4].count(9)>0 else False
+  if len(nums) < 4:
+    return True if nums.count(9) > 0 else False
+  return True if nums[:4].count(9) > 0 else False
 
 def array123(nums):
   for i in range(len(nums) - 2):
@@ -42,20 +42,20 @@ def array123(nums):
 
 def string_match(a, b):
   count = 0
-  for i in range(min(len(a),len(b))-1):
-    if a[i:i+2] == b[i:i+2]:
-      count+=1
+  for i in range(min(len(a),len(b)) - 1):
+    if a[i:i + 2] == b[i:i + 2]:
+      count += 1
   return count
 
 def count_evens(nums):
-  return len([x for x in nums if x%2==0])
+  return len([x for x in nums if x % 2 == 0])
 
 def big_diff(nums):
   difference = 0
   for i in nums:
     for ii in nums:
-      if abs(i-ii) > difference:
-        difference = abs(i-ii)
+      if abs(i - ii) > difference:
+        difference = abs(i - ii)
   return difference
 
 def centered_average(nums):
@@ -66,7 +66,7 @@ def centered_average(nums):
 def sum13(nums):
   n = [x for x in nums]
   for i in range(len(nums)):
-    if nums[i] == 13 or (nums[i-1]==13 and i!=0):
+    if nums[i] == 13 or (nums[i - 1] == 13 and i != 0):
       n.remove(nums[i])
   return sum(n)
 
@@ -91,7 +91,7 @@ def has22(nums):
 def double_char(str):
   result = ''
   for c in str:
-    result += c*2
+    result += c * 2
   return result
 
 def count_hi(str):

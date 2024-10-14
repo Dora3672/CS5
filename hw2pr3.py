@@ -12,11 +12,11 @@ from math import *
 
 def dbl(x):
     """Doubler!  argument: x, a number"""
-    return 2*x
+    return 2 * x
 
 def sq(x):
     """Squarer!  argument: x, a number"""
-    return x**2
+    return x ** 2
 
 
 
@@ -27,7 +27,7 @@ def lc_mult(N):
        and returns a list of integers
        from 0 to N-1, **each multiplied by 2**
     """
-    return [2*x for x in range(N)]
+    return [2 * x for x in range(N)]
 
 def lc_idiv(N):
     """This example accepts an integer N
@@ -35,7 +35,7 @@ def lc_idiv(N):
        from 0 to N-1, **each divided by 2**
        WARNING: this is INTEGER division...!
     """
-    return [x//2 for x in range(N)]
+    return [x // 2 for x in range(N)]
 
 def lc_fdiv(N):
     """This example accepts an integer N
@@ -43,7 +43,7 @@ def lc_fdiv(N):
        from 0 to N-1, **each divided by 2**
        NOTE: this is floating-point division...!
     """
-    return [x/2 for x in range(N)]
+    return [x / 2 for x in range(N)]
 
 # printing tests
 print( "lc_mult(4)   should be [0, 2, 4, 6] :", lc_mult(4) )   
@@ -62,7 +62,7 @@ def unitfracs(N):
         N: the number of sections to divide 1 by
         Return: a list of N evenly-spaced left-hand endpoints (fractions) in the unit interval [0, 1)
     """
-    return [x/N for x in range(N)]
+    return [x / N for x in range(N)]
 
 def scaledfracs(low, high, N):
     """
@@ -71,7 +71,7 @@ def scaledfracs(low, high, N):
         N: the number of sections between the interval
         Return: a list of N evenly-spaced left endpoints uniformly through the interval [low, high)
     """
-    return [x*(high-low) + low for x in unitfracs(N)]
+    return [x * (high - low) + low for x in unitfracs(N)]
 
 def sqfracs(low, high, N):
     """
@@ -80,7 +80,7 @@ def sqfracs(low, high, N):
         N: the number of sections between the interval
         Return: the list containing the y values (results) of a function at each of these x positions (squared)
     """
-    return [x*x for x in scaledfracs(low,high,N)]
+    return [x * x for x in scaledfracs(low,high,N)]
 
 def f_of_fracs(f, low, high, N):
     """
@@ -104,7 +104,7 @@ def integrate(f, low, high, N):
        from low to high
     """
 
-    return sum(f_of_fracs(f, low, high, N)) * (high-low)/N
+    return sum(f_of_fracs(f, low, high, N)) * (high - low) / N
 
 print( "integrate(dbl, 0, 10, 4) should be 75 :", integrate(dbl, 0, 10, 4) )
 print( "integrate(sq, 0, 10, 4) should be 218.75 :", integrate(sq, 0, 10, 4) )
@@ -124,7 +124,7 @@ y=-x+11
 
 def c(x):
     """c is a semicircular function of radius two"""
-    return (4 - x**2)**0.5
+    return (4 - x ** 2) ** 0.5
 
 
 """Q2. 

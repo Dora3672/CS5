@@ -37,7 +37,7 @@ def mult(c, n):
     """
     result = 0
     for i in range(n):
-       result+=c
+       result += c
     return result
 
 print("mult(105, 3) should be 315 and is", mult(105, 3))
@@ -49,7 +49,7 @@ def update(c, n):
     """
     z = 0
     for i in range(n):
-        z = z**2 +c
+        z = z ** 2 + c
     return z
 
 
@@ -63,7 +63,7 @@ def inMSet(c, n):
     """
     z = 0
     for i in range(n):
-        z = z**2 +c
+        z = z ** 2 + c
         if abs(z) > 2:
             return False
     return True
@@ -120,7 +120,7 @@ def scale(pix, pixMax, floatMin, floatMax):
     scale returns the floating-point value that
         corresponds to pix.
     """
-    return (floatMax - floatMin) * (pix/pixMax) + floatMin
+    return (floatMax - floatMin) * (pix / pixMax) + floatMin
 
 
 def mset():
